@@ -4,7 +4,7 @@ An Alfred workflow to create a new document in the current directory of Finder.
 # 说明
 源代码来源于锋友 kunkunkao 写的 AppleScript: 
 http://bbs.feng.com/read-htm-tid-315552.html  
-由于当前的版本下服务不显示在右键菜单了于是我将这个脚本进行了一些修改做成了 Alfred 的 Workflow。
+由于当前的版本下服务不显示在右键菜单了，于是我将这个脚本进行了一些修改做成了 Alfred 的 Workflow。
 
 # 使用方法
 * 输入关键字 new 即可新建文件，默认文件名为无拓展名的 untitled
