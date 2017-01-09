@@ -1,5 +1,6 @@
 # Alfred-New-Document
-An Alfred workflow to create a new document in the current directory of Finder.  Need [Alfred](https://www.alfredapp.com) with [Powerpack](https://www.alfredapp.com/powerpack/).  
+An Alfred workflow to create a new document in the current directory of Finder.  Need [Alfred](https://www.alfredapp.com) with [Powerpack](https://www.alfredapp.com/powerpack/).  
+
 [Download](https://github.com/hguandl/Alfred-New-Document/releases/latest)
 
 # 说明
