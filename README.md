@@ -1,6 +1,5 @@
 # Alfred-New-Document
-An Alfred workflow to create a new document in the current directory of Finder.  
-Need [Alfred](https://www.alfredapp.com) with [Powerpack](https://www.alfredapp.com/powerpack/).  
+An Alfred workflow to create a new document in the current directory of Finder. Need [Alfred](https://www.alfredapp.com) with [Powerpack](https://www.alfredapp.com/powerpack/).  
 [Download](https://github.com/hguandl/Alfred-New-Document/releases/latest)
 
 # 说明
@@ -17,5 +16,5 @@ Need [Alfred](https://www.alfredapp.com) with [Powerpack](https://www.alfredapp.
 * 目前的方案是使用关键字 dnew 强制在桌面新建文件。
 
 # 鸣谢
-大部分代码基于 [kunkunkao](http://bbs.feng.com/home.php?mod=space&uid=329358) 写的脚本，我主要做了移植工作。  
+大部分代码基于 [kunkunkao](http://bbs.feng.com/home.php?mod=space&uid=329358) 写的脚本，我主要做了移植工作。
 [Github](https://www.github.com/hguandl/Alfred-New-Document/)
