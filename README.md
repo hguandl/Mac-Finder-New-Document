@@ -1,5 +1,7 @@
 # Alfred-New-Document
-An Alfred workflow to create a new document in the current directory of Finder.* Download https://github.com/hguandl/Alfred-New-Document/releases/latest
+An Alfred workflow to create a new document in the current directory of Finder. 
+* Download https://github.com/hguandl/Alfred-New-Document/releases/latest
+
 # 说明
 源代码来源于锋友 kunkunkao 写的 AppleScript: 
 http://bbs.feng.com/read-htm-tid-315552.html  
