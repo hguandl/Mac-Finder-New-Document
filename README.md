@@ -1,7 +1,7 @@
 # Creat New Documents for Finder on Mac
 An Alfred workflow to create a new document in the current directory of Finder.  Need [Alfred](https://www.alfredapp.com) with [Powerpack](https://www.alfredapp.com/powerpack/).  
 
-[Download](https://github.com/hguandl/Alfred-New-Document/releases/latest)
+[Download](https://github.com/hguandl/Mac-Finder-New-Document/releases/tag/0.1)
 
 # 说明
 源代码来源于锋友 [kunkunkao](http://bbs.feng.com/home.php?mod=space&uid=329358) 写的 AppleScript。（[原帖地址](http://bbs.feng.com/read-htm-tid-315552.html)）  
