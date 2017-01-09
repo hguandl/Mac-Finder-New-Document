@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>github.hguandl.new-document</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>0AA4ECFA-43CE-4435-907E-975F66D031CE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F6CBCBCF-3EA7-4855-8986-8564AAF52920</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8AB1C5B7-FCD6-43A0-B103-743EF6A8E1C1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DF0B17EA-900B-4908-9CD8-94C079C50758</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>F2A7C153-595D-4F8C-ACB7-97CBF019D534</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C99DF24C-29A1-477D-B7D1-BAE8F950AC1A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0AA4ECFA-43CE-4435-907E-975F66D031CE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DBBD5857-50D0-49F4-AC45-AEAA0BDC24EA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DBBD5857-50D0-49F4-AC45-AEAA0BDC24EA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>EC3B407D-A18E-4194-BD38-78CEAEB9F819</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DF0B17EA-900B-4908-9CD8-94C079C50758</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>609A915D-4A75-4389-A809-F22376A290BA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F2A7C153-595D-4F8C-ACB7-97CBF019D534</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E0FE51C3-8930-474B-9529-138859205D43</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>hguandl</string>
+	<key>description</key>
+	<string></string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>新建文件</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+  	set txtName to item 1 of argv
+  	tell application "Finder"
+		try
+			set currentFolder to (folder of the front window)
+			set currentPath to (POSIX path of (target of the front window as alias))
+			set libkIsDeskTop to false
+		on error
+			set currentFolder to desktop
+			set currentPath to (POSIX path of (desktop as alias))
+			set libkIsDeskTop to true
+		end try
+		set txtName to "untitled"
+		set n to 1
+		considering case
+			tell (get name of currentFolder's files) to repeat while txtName is in it
+				set txtName to "untitled_" &amp; n
+				set n to n + 1
+			end repeat
+		end considering
+		set newTxt to currentPath &amp; txtName
+		do shell script "touch " &amp; newTxt
+		if libkIsDeskTop is false then select the file txtName in currentFolder
+  	end tell
+end run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>609A915D-4A75-4389-A809-F22376A290BA</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>DF0B17EA-900B-4908-9CD8-94C079C50758</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>new</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>新建文件</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>8AB1C5B7-FCD6-43A0-B103-743EF6A8E1C1</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+	set txtName to item 1 of argv
+	tell application "Finder"
+		try
+			set currentFolder to (folder of the front window)
+			set currentPath to (POSIX path of (target of the front window as alias))
+			set libkIsDeskTop to false
+		on error
+			set currentFolder to desktop
+			set currentPath to (POSIX path of (desktop as alias))
+			set libkIsDeskTop to true
+		end try
+		set prevTID to text item delimiters of AppleScript
+		set text item delimiters of AppleScript to "."
+		set libkNameParts to text items of txtName
+		set text item delimiters of AppleScript to prevTID
+		
+		set len to length of libkNameParts
+		if len = 1 then
+			set ext to ""
+			set baseName to txtName
+			set txtName to baseName &amp; ext
+		else if len = 2 then
+			set ext to "." &amp; last text item of libkNameParts
+			set baseName to item 1 of libkNameParts as text
+		else
+			set ext to "." &amp; last text item of libkNameParts
+			set baseName to text 1 thru -((length of ext) + 1) of txtName
+		end if
+		set n to 1
+		considering case
+			tell (get name of currentFolder's files) to repeat while txtName is in it
+				set txtName to baseName &amp; "_" &amp; n &amp; ext
+				set n to n + 1
+			end repeat
+		end considering
+		set newTxt to currentPath &amp; txtName
+		do shell script "touch " &amp; newTxt
+		if libkIsDeskTop is false then select the file txtName in currentFolder
+	end tell
+end run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>E0FE51C3-8930-474B-9529-138859205D43</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>F2A7C153-595D-4F8C-ACB7-97CBF019D534</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+  	set txtName to item 1 of argv
+  	tell application "Finder"
+		set currentFolder to desktop
+		set currentPath to (POSIX path of (desktop as alias))
+		set txtName to "untitled"
+		set n to 1
+		considering case
+			tell (get name of currentFolder's files) to repeat while txtName is in it
+				set txtName to "untitled_" &amp; n
+				set n to n + 1
+			end repeat
+		end considering
+		set newTxt to currentPath &amp; txtName
+		do shell script "touch " &amp; newTxt
+  	end tell
+end run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F6CBCBCF-3EA7-4855-8986-8564AAF52920</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>0AA4ECFA-43CE-4435-907E-975F66D031CE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>keyword</key>
+				<string>dnew</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>在桌面新建文件</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>C99DF24C-29A1-477D-B7D1-BAE8F950AC1A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>on run argv
+	set txtName to item 1 of argv
+	tell application "Finder"
+		set currentFolder to desktop
+		set currentPath to (POSIX path of (desktop as alias))
+		set prevTID to text item delimiters of AppleScript
+		set text item delimiters of AppleScript to "."
+		set libkNameParts to text items of txtName
+		set text item delimiters of AppleScript to prevTID
+		
+		set len to length of libkNameParts
+		if len = 1 then
+			set ext to ""
+			set baseName to txtName
+			set txtName to baseName &amp; ext
+		else if len = 2 then
+			set ext to "." &amp; last text item of libkNameParts
+			set baseName to item 1 of libkNameParts as text
+		else
+			set ext to "." &amp; last text item of libkNameParts
+			set baseName to text 1 thru -((length of ext) + 1) of txtName
+		end if
+		set n to 1
+		considering case
+			tell (get name of currentFolder's files) to repeat while txtName is in it
+				set txtName to baseName &amp; "_" &amp; n &amp; ext
+				set n to n + 1
+			end repeat
+		end considering
+		set newTxt to currentPath &amp; txtName
+		do shell script "touch " &amp; newTxt
+	end tell
+end run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>EC3B407D-A18E-4194-BD38-78CEAEB9F819</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>DBBD5857-50D0-49F4-AC45-AEAA0BDC24EA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>说明：
+源代码来源于锋友 kunkunkao 写的 AppleScript：
+http://bbs.feng.com/read-htm-tid-315552.html
+由于当前的版本下服务不显示在右键菜单了于是我将这个脚本进行了一些修改做成了 Alfred 的 Workflow。
+
+使用方法：
+输入关键字 new 即可新建文件，默认文件名为无拓展名的 untitled；
+在 new 后面加空格可以继续输入文件名；
+如果出现重名文件会在文件名后加上下划线和递增的数字。
+
+已知问题和暂时解决办法：
+只有全部 Finder 窗口关闭时才会在桌面新建文件，否则会在未关闭的最后打开的窗口目录下新建文件。例如在有 Finder 窗口打开时，无论切换到别的应用或是鼠标点击桌面后，都不会在桌面新建文件，而是在之前的窗口所在目录下新建。
+目前的方案是使用关键字 dnew 强制在桌面新建文件。</string>
+	<key>uidata</key>
+	<dict>
+		<key>0AA4ECFA-43CE-4435-907E-975F66D031CE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>350</integer>
+			<key>ypos</key>
+			<integer>340</integer>
+		</dict>
+		<key>609A915D-4A75-4389-A809-F22376A290BA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>490</integer>
+			<key>ypos</key>
+			<integer>30</integer>
+		</dict>
+		<key>8AB1C5B7-FCD6-43A0-B103-743EF6A8E1C1</key>
+		<dict>
+			<key>note</key>
+			<string>在最近开启的 Finder 窗口新建文件，如果无开启的窗口则会在桌面新建</string>
+			<key>xpos</key>
+			<integer>100</integer>
+			<key>ypos</key>
+			<integer>90</integer>
+		</dict>
+		<key>C99DF24C-29A1-477D-B7D1-BAE8F950AC1A</key>
+		<dict>
+			<key>note</key>
+			<string>强制在桌面新建文件</string>
+			<key>xpos</key>
+			<integer>100</integer>
+			<key>ypos</key>
+			<integer>350</integer>
+		</dict>
+		<key>DBBD5857-50D0-49F4-AC45-AEAA0BDC24EA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>350</integer>
+			<key>ypos</key>
+			<integer>420</integer>
+		</dict>
+		<key>DF0B17EA-900B-4908-9CD8-94C079C50758</key>
+		<dict>
+			<key>xpos</key>
+			<integer>350</integer>
+			<key>ypos</key>
+			<integer>80</integer>
+		</dict>
+		<key>E0FE51C3-8930-474B-9529-138859205D43</key>
+		<dict>
+			<key>xpos</key>
+			<integer>490</integer>
+			<key>ypos</key>
+			<integer>150</integer>
+		</dict>
+		<key>EC3B407D-A18E-4194-BD38-78CEAEB9F819</key>
+		<dict>
+			<key>xpos</key>
+			<integer>490</integer>
+			<key>ypos</key>
+			<integer>410</integer>
+		</dict>
+		<key>F2A7C153-595D-4F8C-ACB7-97CBF019D534</key>
+		<dict>
+			<key>xpos</key>
+			<integer>350</integer>
+			<key>ypos</key>
+			<integer>160</integer>
+		</dict>
+		<key>F6CBCBCF-3EA7-4855-8986-8564AAF52920</key>
+		<dict>
+			<key>xpos</key>
+			<integer>490</integer>
+			<key>ypos</key>
+			<integer>290</integer>
+		</dict>
+	</dict>
+	<key>version</key>
+	<string>0.1</string>
+	<key>webaddress</key>
+	<string>https://github.com/hguandl/Alfred-New-Document</string>
+</dict>
+</plist>
