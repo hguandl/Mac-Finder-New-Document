@@ -1,10 +1,9 @@
 # Alfred-New-Document
-An Alfred workflow to create a new document in the current directory of Finder. 
-* Download https://github.com/hguandl/Alfred-New-Document/releases/latest
-
+An Alfred workflow to create a new document in the current directory of Finder.  
+Need [Alfred](https://www.alfredapp.com) with [Powerpack](https://www.alfredapp.com/powerpack/)  
+[Download](https://github.com/hguandl/Alfred-New-Document/releases/latest)
 # 说明
-源代码来源于锋友 kunkunkao 写的 AppleScript: 
-http://bbs.feng.com/read-htm-tid-315552.html  
+源代码来源于锋友 [kunkunkao](http://bbs.feng.com/home.php?mod=space&uid=329358) 写的 AppleScript ([原帖地址](http://bbs.feng.com/read-htm-tid-315552.html))  
 由于当前的版本下服务不显示在右键菜单了，于是我将这个脚本进行了一些修改做成了 Alfred 的 Workflow。
 
 # 使用方法
@@ -18,4 +17,3 @@ http://bbs.feng.com/read-htm-tid-315552.html
 
 # 鸣谢
 大部分代码基于 kunkunkao 写的脚本，我主要做了移植工作。  
-http://bbs.feng.com/home.php?mod=space&uid=329358
