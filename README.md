@@ -8,8 +8,9 @@ An Application to create a new document in the current directory of Finder.
 由于当前的版本下服务不显示在右键菜单了，于是我将这个脚本进行了一些修改做成了 Alfred 的 Workflow。
 
 # 使用方法
-* 输入关键字 new 即可新建文件，默认文件名为无拓展名的 untitled。
-* 在 new 后面加空格可以继续输入文件名。
+* 将 new.app 和 dnew.app 放到应用目录下(/Applications 和 ~/Applications 均可)。
+* 在 Spotlight 或 Alfred 等应用启动器中输入关键字 new 即可启动 new.app。
+* 在弹出的对话框中输入文件名，默认为无拓展名的 untitled，按回车或确定即可新建文件。
 * 如果出现重名文件会在文件名后加上下划线和递增的数字。
 
 # 已知问题和暂时解决办法
