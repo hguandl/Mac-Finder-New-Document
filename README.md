@@ -1,4 +1,4 @@
-# Creat New Documents for Finder on Mac
+# Create New Documents for Finder on Mac
 An Application to create a new document in the current directory of Finder.  
 
 [Download](https://github.com/hguandl/Mac-Finder-New-Document/releases/tag/0.1a)
