@@ -18,3 +18,5 @@ Need [Alfred](https://www.alfredapp.com) with [Powerpack](https://www.alfredapp.
 
 # 鸣谢
 大部分代码基于 [kunkunkao](http://bbs.feng.com/home.php?mod=space&uid=329358) 写的脚本，我主要做了移植工作。  
+
+https://github.com/hguandl/Alfred-New-Document
