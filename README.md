@@ -18,4 +18,3 @@ An Alfred workflow to create a new document in the current directory of Finder. 
 
 # 鸣谢
 大部分代码基于 [kunkunkao](http://bbs.feng.com/home.php?mod=space&uid=329358) 写的脚本，我主要做了移植工作。
-[Github](https://www.github.com/hguandl/Alfred-New-Document/)
